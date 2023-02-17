@@ -1,0 +1,27 @@
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+*/.ipynb_checkpoints/*
+.venv*/
+.conda*/
+.python-version
+
+# IDE and system
+.idea
+.vscode
+.DS_Store
+
+# data
+data/
+
+# model binaries
+*.pt
+*.pth
+
+# project
+/framework/data_splits/
+/framework/augmentations/images
+framework/training_results/

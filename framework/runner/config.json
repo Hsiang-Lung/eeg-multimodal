@@ -1,0 +1,46 @@
+{
+  "runs": [
+    {
+      "run_id": "Multi_best",
+      "random_seed": 43,
+      "preprocessing": {
+        "src_path": "/vol/chameleon/projects/eeg/data/",
+        "dest_path": "/framework/data_splits/multiclass_split/",
+        "binary": 0,
+        "filter": "none",
+        "normalization": "channel",
+        "sampling": "",
+        "sample_split": "subsampling, segments",
+        "subsampling_count": 10,
+        "segment_step": 20,
+        "segment_window": 25
+      },
+      "augmentations": {
+        "gauss":
+        {"is": 1, "mu": 0, "sigma": 0.000002, "prob": 0.5
+        },
+        "sign": {"is": 1, "prob": 0.5
+        },
+        "time": {"is": 1, "prob": 0.5
+        },
+        "rescale": {"is": 1, "mu": 1, "sigma": 0.1, "prob": 0.5
+        },
+        "ftsurr": {"is": 1, "noise": 0.2, "indep": 0, "prob": 0.5
+        },
+        "freqshift": {"is": 1, "delta": 0.01, "sfreq": 200, "prob": 0.5
+        },
+        "channel_dropout": {"is": 1, "prob": 0.2
+        }
+      },
+      "model": {
+        "epochs": 100,
+        "batch_size": 16, 
+        "patience": 8, 
+        "table": 1, 
+        "weighted_loss": 1, 
+        "column_dropout": 0.0,              
+        "column_dropout_idx": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "runs": [
+    {
+      "run_id": "TEST",
+      "random_seed": 42,
+      "preprocessing": {
+        "src_path": "<path to data>",
+        "dest_path": "<path where to save preprocessed data>",
+        "binary": "CHOOSE ONE: 0, 1",
+        "filter": "CHOOSE ONE: None, notch, bandpass",
+        "normalization": "CHOOSE ONE: channel, sample, dataset",
+        "sampling": "CHOOSE ONE: none, undersampling, oversampling",
+        "sample_split": "None, segments, subsampling",
+        "split_count": 10
+      },
+      "augmentations": {
+        "gauss": {"is":1, "mu":0, "sigma":0.000002, "prob":0.5},
+        "sign": {"is":1, "prob":0.5},
+        "time": {"is":1, "prob":0.5},
+        "rescale": {"is":1, "mu":1, "sigma":0.1, "prob":0.5},
+        "ftsurr": {"is":0, "noise":0.1, "indep":0, "prob":0.5},
+        "freqshift": {"is":1, "delta":0.001, "sfreq":20, "prob":0.5}
+      },
+      "model": {
+        "epochs": 20,
+        "batch_size": 16,
+        "patience": 5,
+        "table": 0,
+        "weighted_loss": 0
+      }
+    }
+  ]
+}

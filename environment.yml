@@ -1,0 +1,42 @@
+# conda env create -f environment.yml
+name: eeg-multimodal
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+dependencies:
+  - python=3.9.1
+  - pip
+  # NOTEBOOKS
+  - jupyter
+  - jupyterlab
+  # BASICS
+  - numpy
+  - scipy
+  - pandas
+  - tqdm
+  - click
+  - hydra-core
+  - openpyxl
+  # VISUALIZATION
+  - matplotlib
+  - seaborn
+  # ML & DEEP LEARNING
+  - scikit-learn
+  - imbalanced-learn
+  - statsmodels
+  - pytorch=1.13
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=11.6
+  - pip:
+      - mne
+      - yasa
+      - torchsummary
+      - torchinfo
+
+
+
+
+
+
